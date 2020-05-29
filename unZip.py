@@ -1,12 +1,16 @@
 from readXML import dehtml
-from os import listdir,path
+from os import listdir, path, mkdir,  
 import zipfile
 import time
 
 def main(): 
-    zipDir = 'D:\\CNA語料\\CorpusZip'
-    txtDir = 'D:\\CNA語料\\CorpusTXT'
-    exDir = 'D:\\CNA語料\\extract'
+    zipDir = 'data/CorpusZip'
+    txtDir = 'data/CorpusTXT'
+    exDir = 'data/extract'
+    
+    if path.isdir(zipDir):mkdir(zipDir) 
+    if path.isdir(txtDir):mkdir(txtDir) 
+    if path.isdir(exDir):mkdir(exDir) 
     
     zipFiles = listdir(zipDir) 
     startTime = time.time()
